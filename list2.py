@@ -29,10 +29,15 @@ def remove_adjacent(nums):
 def linear_merge(list1, list2):
     result = []
     while len(list1) and len(list2):
+        #examine first element of each list: This is sorting!
         if list1[0] < list2[0]:
+            # remoce item from list 1, add to result
             result.append(list1.pop(0))
         else:
+            # remove item from list 2, add to result
             result.append(list2.pop(0))
+    # At this point, one of the lists is guaranteed to be empty
+     # This will clean up any leftover elements
     result.extend(list1)
     result.extend(list2)
     return result
